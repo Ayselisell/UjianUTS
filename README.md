@@ -1,69 +1,57 @@
-# CodeIgniter 4 Application Starter
+# Gharafaiha Resto - Website Modern Promosi Gulai Ikan Patin (Khas Riau)
 
-## What is CodeIgniter?
+Website modern promosi makanan khas daerah Indonesia yang dikembangkan untuk Ujian Praktik On The Spot Coding menggunakan **CodeIgniter 4**, **MySQL**, **Tailwind CSS (CDN)**, dan **FontAwesome**.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 📌 Identitas Siswa & Penetapan Tugas
+- **Nama Siswa**: Aysel Gharafaiha Saputra
+- **Nama Restoran**: **Gharafaiha Resto**
+- **Daerah Khas**: **Riau**
+- **Nama Makanan Utama**: **Gulai Ikan Patin**
+- **Skema Warna (Palette)**:
+  - Primary / Accent: `#C4B5FD` (Soft Violet)
+  - Secondary / Deep Accent: `#6D28D9` (Deep Violet)
+- **Modul / Fitur Khusus**: **Filter** (Kategori Menu) & **Sorting** (Harga, Rating, Nama)
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+---
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## 🚀 Fitur Utama Website
+1. **Homepage / Landing Page Modern**:
+   - Hero banner dengan branding khas Gharafaiha Resto & Riau.
+   - Katalog menu makanan khas daerah Riau (9 variasi hidangan).
+   - Filter Kategori & Sorting (Urutkan berdasarkan harga termurah/termahal, rating tertinggi, nama A-Z).
+   - Fitur Keranjang Belanja (Cart) LocalStorage & Pemesanan langsung via **WhatsApp Checkout**.
+   - Penjelasan sejarah & warisan kuliner Gulai Ikan Patin Riau.
+2. **Halaman Detail Makanan (`/food/(:num)`)**:
+   - Informasi lengkap hidangan, asal daerah, rating, level pedas, deskripsi keistimewaan.
+   - Tombol pesan langsung dan rekomendasi menu terkait.
+3. **Portal Admin Login (`/login`)**:
+   - Sistem otentikasi admin aman dengan session guard.
+   - **Kredensial Admin**: `admin@gharafaiha.com` / `admin123`.
+4. **Dashboard Admin CRUD (`/admin/foods`)**:
+   - Kelola daftar menu makanan (Tambah, Lihat Detail, Edit, Hapus).
+   - Penanganan upload gambar makanan & validasi input.
 
-## Installation & updates
+---
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## 📜 Riwayat Commit Git (Total 4 Commit)
+1. `Setup database & migration Gulai Ikan Patin`
+2. `CRUD dasar + tampilan Tailwind Gulai Ikan Patin`
+3. `Halaman detail + fitur tambahan + gambar AI Gulai Ikan Patin`
+4. `Finalisasi Gulai Ikan Patin`
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+---
 
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.2 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## 🛠️ Cara Menjalankan Project
+1. Import / jalankan migrasi & seeder ke database MySQL `ulanganuts`:
+   ```bash
+   php spark migrate
+   php spark db:seed UserSeeder
+   php spark db:seed FoodSeeder
+   ```
+2. Jalankan server lokal:
+   ```bash
+   php spark serve
+   ```
+3. Buka di browser: `http://localhost:8080` atau `http://localhost/UlanganUTS/public/`
